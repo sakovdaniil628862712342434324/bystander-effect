@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bystander Effect Experiment</title>
+  <meta name="theme-color" content="rgb(58, 59, 69)">
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/css/index.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body data-bs-theme="light">
+  <div class="bg-image" style="background-image: url('/static/img/bg.png');"></div>
+  <!-- Navigation Bar with Search Functionality -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Bystander Effect</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+        aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#homeTab" data-bs-toggle="tab">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#experimentTab" data-bs-toggle="tab">Experiment</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#findingsTab" data-bs-toggle="tab">Findings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#ethicsTab" data-bs-toggle="tab">Ethics</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#resourcesTab" data-bs-toggle="tab">Resources</a>
+          </li>
+          <li class="nav-item">
+            <select class="form-select form-select-sm" id="audiotracker" aria-label=".form-select-sm example">
+              <option selected>Audio</option>
+              <option value="1">On</option>
+              <option value="2">Off</option>
+            </select>
+          </li>
+        </ul>
+        <form class="d-flex position-relative" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput"
+            onkeyup="searchFunction()">
+          <button class="btn btn-outline-light" type="submit">Search</button>
+          <div id="searchResults"></div>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- Tabs Content -->
+  <div class="container mt-4">
+    <div class="tab-content">
+      <!-- Home Tab -->
+      <div class="tab-pane fade show active" id="homeTab">
+        <!-- Main Header -->
+        <h1 class="text-center mt-4 mb-5 card border-dark bg-success text-white">
+          The Bystander Effect Experiment: Unraveling Human Behavior
+        </h1>
+
+        <!-- Introduction Section -->
+        <div class="card border-dark mb-4">
+          <div class="card-header card-header-custom">
+            Introduction to the Bystander Effect
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              The Bystander Effect, a phenomenon in social psychology, refers to the increased likelihood that
+              individuals do not help a victim when other people are present. Explore this intriguing subject through
+              the navigation above!
+            </p>
+          </div>
+        </div>
+
+        <!-- Encouragement to Explore Further -->
+        <div class="text-center">
+          <h3>Ready to Unravel More?</h3>
+          <p>
+            The Bystander Effect is just one facet of understanding human behavior, yet it has a profound impact on our
+            daily lives. Continue exploring our resources to better appreciate social psychology and its influence on
+            our interactions and decisions.
+          </p>
+        </div>
+      </div>
+      <!-- Experiment Tab -->
+      <div class="tab-pane fade" id="experimentTab">
+        <!-- Study Conductors -->
+        <div class="card border-dark mb-4">
+          <div class="card-header card-header-custom">
+            Who Conducted the Study?
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">John M. Darley and Bibb Latané</h4>
+            <p class="card-text">
+              Social psychologists John M. Darley and Bibb Latané conducted a groundbreaking study on the Bystander
+              Effect in 1968. Inspired by the tragic murder of Kitty Genovese in 1964, which highlighted the perplexing
+              lack of intervention by numerous witnesses, Darley and Latané sought to understand the underlying reasons
+              behind such inaction.
+            </p>
+            <p class="card-text">
+              The 1960s was a pivotal decade in the United States, marked by significant social changes and a burgeoning
+              interest in studying human behavior within group dynamics. Darley and Latané's work emerged as one of the
+              first systematic examinations of the Bystander Effect within a controlled laboratory setting, laying the
+              foundation for future research in social psychology.<button type="button"
+                class="btn btn-primary btn-sm rounded-circle ms-2" onclick="readAudioAnswerPreDefined('1', true)">
+                <i class="fas fa-play"></i>
+              </button>
+            </p>
+            <a href="#" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#researcherModal"
+              onclick="readAudioAnswerPreDefined('2')">Learn
+              More About the Researchers</a>
+          </div>
+        </div>
+        <!-- Researchers Modal -->
+        <div class="modal fade" id="researcherModal" tabindex="-1" aria-labelledby="researcherModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="researcherModalLabel">John M. Darley and Bibb Latané</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"
+                  onclick="readAudioAnswerPreDefined('0')"></button>
+              </div>
+              <div class="modal-body">
+                <h6>John M. Darley</h6>
+                <p>
+                  John M. Darley was an influential social psychologist known for his work on the Bystander Effect
+                  alongside Bibb Latané. His research focused on decision-making processes and how situational factors
+                  influence human behavior.
+                </p>
+                <h6>Bibb Latané</h6>
+                <p>
+                  Bibb Latané is a prominent social psychologist whose collaboration with John Darley led to the
+                  foundational studies on the Bystander Effect. His work has significantly contributed to our
+                  understanding of group dynamics and social influence.<button type="button"
+                    class="btn btn-primary btn-sm rounded-circle ms-2" onclick="readAudioAnswerPreDefined('2', true)">
+                    <i class="fas fa-play"></i>
+                  </button>
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                  onclick="readAudioAnswerPreDefined('0')">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Research Purpose -->
+        <div class="alert border-dark alert-success mb-4">
+          <h2 class="text-center section-header">Purpose of the Study</h2>
+          <p class="mb-3">
+            Darley and Latané's primary objective was to elucidate why individuals often refrain from helping others in
+            emergencies when others are present. They hypothesized that the presence of multiple bystanders dilutes the
+            sense of personal responsibility, making individuals less likely to intervene.
+          </p>
+          <p>
+            By systematically varying the number of bystanders in controlled experiments, the researchers aimed to
+            examine how group size influences the likelihood of an individual's intervention. This inquiry was pivotal
+            in understanding the cognitive and social mechanisms that govern group altruistic behavior.<button
+              type="button" class="btn btn-primary btn-sm rounded-circle ms-2"
+              onclick="readAudioAnswerPreDefined('3', true)">
+              <i class="fas fa-play"></i>
+            </button>
+          </p>
+        </div>
+        <!-- Research Question -->
+        <div class="card border-dark mb-4">
+          <div class="card-header card-header-custom">
+            Research Question
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">"How does the number of bystanders present affect an individual's likelihood of
+              helping in an emergency situation?"</h5>
+            <p class="card-text">
+              This question serves as the cornerstone of the Bystander Effect Experiment, guiding the structure and
+              methodology of the study. By focusing on the relationship between the number of observers and the
+              probability of assistance, Darley and Latané sought to uncover patterns of human behavior under social
+              influence. <button type="button" class="btn btn-primary btn-sm rounded-circle ms-2"
+                onclick="readAudioAnswerPreDefined('4', true)">
+                <i class="fas fa-play"></i>
+              </button>
+            </p>
+            <button class="btn btn-primary mt-3" data-bs-toggle="collapse" data-bs-target="#researchDetails"
+              onclick="readAudioAnswerPreDefined('2')">
+              Learn More
+            </button>
+            <div class="collapse mt-3" id="researchDetails">
+              <div class="card card-body">
+                <h6>Key Aspects of the Research:</h6>
+                <ul>
+                  <li>Manipulation of bystander numbers</li>
+                  <li>Simulated emergency scenarios</li>
+                  <li>Measurement of response times</li>
+                  <li>Analysis of intervention rates</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Experimental Design -->
+        <div class="card border-dark mb-4">
+          <div class="card-header card-header-custom">
+            Experimental Design
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Independent Groups Design</h5>
+            <p class="card-text">
+              The study utilized an independent group design. Each participant was randomly assigned to one of several
+              conditions that varied the number of perceived bystanders present during the simulated emergency. This
+              approach ensured that each participant experienced only one level of the independent variable, thereby
+              eliminating potential contamination between conditions.
+            </p>
+            <p>
+              This design choice was crucial in isolating the effect of the number of bystanders on the likelihood of
+              intervention, thereby providing transparent and interpretable results. <button type="button"
+                class="btn btn-primary btn-sm rounded-circle ms-2" onclick="readAudioAnswerPreDefined('5', true)">
+                <i class="fas fa-play"></i>
+              </button>
+            </p>
+          </div>
+        </div>
+        <div class="card border-dark mb-4 shadow-sm">
+          <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Variables in the Study</h4>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-center mb-4">Independent and Dependent Variables</h5>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <div class="card h-100 border-primary">
+                  <div class="card-header bg-primary text-white">
+                    Independent Variable (IV)
+                  </div>
+                  <div class="card-body">
+                    <p class="card-text">The number of bystanders participants believed were present during the
+                      simulated emergency.</p>
+                    <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="popover"
+                      data-bs-placement="bottom" title="Operational Definition"
+                      data-bs-content="Manipulated by varying the number of background voices participants heard during the simulated emergency scenario."
+                      onclick="readAudioAnswerPreDefined('6')">
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="card h-100 border-success">
+                  <div class="card-header bg-success text-white">
+                    Dependent Variable (DV)
+                  </div>
+                  <div class="card-body">
+                    <p class="card-text">The likelihood and speed at which participants decided to intervene or seek
+                      help.</p>
+                    <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="popover"
+                      data-bs-placement="bottom" title="Operational Definition"
+                      data-bs-content="Measured by the elapsed time between the onset of the emergency and the participant's response, such as leaving the room to seek assistance."
+                      onclick="readAudioAnswerPreDefined('7')">
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Findings Tab -->
+      <div class="tab-pane fade" id="findingsTab">
+        <!-- Results/Findings -->
+        <div class="card border-dark mb-4">
+          <div class="card-header card-header-custom">
+            What Were the Findings?
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              Darley and Latané found a significant inverse relationship between the number of bystanders present and
+              the likelihood of intervention. Specifically:
+            </p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">With more bystanders, participants were less likely to help and took longer to
+                respond.</li>
+              <li class="list-group-item">The presence of others led to a diffusion of responsibility, where individuals
+                felt less personally accountable.</li>
+              <li class="list-group-item">Participants exhibited behaviors consistent with social norms and expectations
+                in group settings.</li>
+            </ul>
+            <p class="card-text mt-3">
+              These findings provided strong empirical evidence for the Bystander Effect, demonstrating how group
+              dynamics can significantly influence individual behavior in emergency situations.<button type="button"
+                class="btn btn-primary btn-sm rounded-circle ms-2" onclick="readAudioAnswerPreDefined('8', true)">
+                <i class="fas fa-play"></i>
+              </button>
+            </p>
+          </div>
+        </div>
+
+        <!-- Participants and Recruitment -->
+        <div class="alert border-dark alert-success mb-4">
+          <h2 class="text-center section-header">
+            Participants and Recruitment
+          </h2>
+          <div class="card-body">
+            <p class="card-text">
+              The Bystander Effect experiment conducted by Darley and Latané primarily involved college students from
+              their respective universities. Participants were recruited through convenience sampling, a common practice
+              at the time due to its practicality and ease of access. This method allowed the researchers to gather a
+              sufficient number of participants quickly. However, it did limit the generalizability of the findings.
+            </p>
+            <p class="card-text">
+              Most participants were young adults, predominantly from similar socioeconomic and demographic backgrounds.
+              While this approach facilitated comprehensive data collection within a controlled environment, it also
+              introduced potential sampling biases that could affect the study's external validity.<button type="button"
+                class="btn btn-primary btn-sm rounded-circle ms-2" onclick="readAudioAnswerPreDefined('9', true)">
+                <i class="fas fa-play"></i>
+              </button>
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive Quiz -->
+        <div class="card border-dark mb-4">
+          <div class="card-header card-header-custom">
+            Test Your Knowledge: Experiment Setup Quiz
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              Participate in this short quiz to assess your understanding of how the Bystander Effect experiment was set
+              up.
+            </p>
+            <form id="quizForm">
+              <!-- Quiz Question -->
+              <div class="mb-3">
+                <label for="quizQuestion" class="form-label">
+                  <strong>1. What task were participants initially told they would be performing?</strong>
+                </label>
+                <div>
+                  <input class="form-check-input" type="radio" name="question1" id="q1a" value="a">
+                  <label class="form-check-label" for="q1a">a) Participating in a study on memory recall</label>
+                </div>
+                <div>
+                  <input class="form-check-input" type="radio" name="question1" id="q1b" value="b">
+                  <label class="form-check-label" for="q1b">b) Taking part in a survey about group dynamics</label>
+                </div>
+                <div>
+                  <input class="form-check-input" type="radio" name="question1" id="q1c" value="c">
+                  <label class="form-check-label" for="q1c">c) Engaging in a task measuring reaction times</label>
+                </div>
+                <div>
+                  <input class="form-check-input" type="radio" name="question1" id="q1d" value="d">
+                  <label class="form-check-label" for="q1d">d) Observing others in a simulated emergency</label>
+                </div>
+              </div>
+
+              <!-- Quiz Question -->
+              <div class="mb-3">
+                <label for="quizQuestion2" class="form-label">
+                  <strong>2. How was the number of bystanders manipulated in the experiment?</strong>
+                </label>
+                <div>
+                  <input class="form-check-input" type="radio" name="question2" id="q2a" value="a">
+                  <label class="form-check-label" for="q2a">a) By changing the physical number of people in the
+                    room</label>
+                </div>
+                <div>
+                  <input class="form-check-input" type="radio" name="question2" id="q2b" value="b">
+                  <label class="form-check-label" for="q2b">b) By varying the number of background voices heard</label>
+                </div>
+                <div>
+                  <input class="form-check-input" type="radio" name="question2" id="q2c" value="c">
+                  <label class="form-check-label" for="q2c">c) By altering the severity of the simulated
+                    emergency</label>
+                </div>
+                <div>
+                  <input class="form-check-input" type="radio" name="question2" id="q2d" value="d">
+                  <label class="form-check-label" for="q2d">d) By changing the instructions given to
+                    participants</label>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="button" class="btn btn-primary" onclick="checkQuiz()">Submit Answers</button>
+            </form>
+
+            <!-- Quiz Feedback -->
+            <div id="quizFeedback" class="mt-4" style="display: none;">
+              <h5>Quiz Results:</h5>
+              <ul id="quizResults" class="list-group">
+                <!-- Results will be injected here -->
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Importance of the Study -->
+        <div class="card border-dark mb-4 shadow-lg">
+          <div class="card-header card-header-custom d-flex justify-content-between align-items-center">
+            <h4 class="card-title mb-0">Importance of the Study</h4>
+            <i class="bi bi-info-circle text-muted" data-bs-toggle="popover"
+              data-bs-content="This section explains why the study was conducted and its significance."
+              data-bs-trigger="hover focus" title="Importance Section"></i>
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              The insights gained from the Bystander Effect Experiment have profound practical implications for public
+              safety and emergency response protocols. By elucidating the dynamics that discourage individuals from
+              helping, the study informs the development of interventions to mitigate this phenomenon's negative
+              aspects.
+            </p>
+            <p class="card-text">
+              Furthermore, the research contributes to the broader understanding of group behavior, decision-making
+              processes, and social responsibility. These findings are instrumental in shaping educational curricula,
+              fostering community initiatives, and enhancing societal resilience in crises.<button type="button"
+                class="btn btn-primary btn-sm rounded-circle ms-2" onclick="readAudioAnswerPreDefined('10', true)">
+                <i class="fas fa-play"></i>
+              </button>
+            </p>
+            <a href="#" class="btn btn-secondary mt-3 d-flex align-items-center" data-bs-toggle="modal"
+              data-bs-target="#impactModal" onclick="readAudioAnswerPreDefined('11')">
+              Explore the Impact <i class="bi bi-arrow-right-circle ms-2"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Impact Modal -->
+        <div class="modal fade" id="impactModal" tabindex="-1" aria-labelledby="impactModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header bg-secondary text-white">
+                <h5 class="modal-title" id="impactModalLabel">Impact of the Bystander Effect Study</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                  aria-label="Close" onclick="readAudioAnswerPreDefined('0')"></button>
+              </div>
+              <div class="modal-body">
+                <p>
+                  The Bystander Effect research, in which you play a crucial role, has been pivotal in shaping how
+                  societies understand and respond to emergencies. It has led to the development of training programs to
+                  reduce bystander inaction by emphasizing personal responsibility and providing strategies to overcome
+                  social inhibition.
+                </p>
+                <p>
+                  Additionally, the study has influenced public policies related to public safety, encouraging the
+                  implementation of public awareness campaigns that educate individuals on the importance of taking
+                  action during crises. This reassures the public and instills confidence in the effectiveness of these
+                  policies.<button type="button" class="btn btn-primary btn-sm rounded-circle ms-2"
+                    onclick="readAudioAnswerPreDefined('11', true)">
+                    <i class="fas fa-play"></i>
+                  </button>
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="readAudioAnswerPreDefined('0')">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- Ethics Tab -->
+      <div class="tab-pane fade" id="ethicsTab">
+        <!-- Sampling Method -->
+        <div class="card border-dark mb-4">
+          <div class="card-header bg-secondary text-white">
+            <h2 class="text-center mb-0">Sampling Method</h2>
+          </div>
+          <div class="card-body">
+            <p class="mb-3">
+              Darley and Latané employed convenience sampling to recruit participants for their study. The majority of
+              participants were college students from their respective universities.
+            </p>
+
+            <div class="mb-4">
+              <h5>Do you think this sampling method was appropriate for the study?</h5>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-outline-primary" id="yesButton">Yes</button>
+                <button type="button" class="btn btn-outline-primary" id="noButton">No</button>
+              </div>
+            </div>
+
+            <div id="responseArea" class="alert" style="display: none;"></div>
+
+            <div id="additionalInfo" style="display: none;">
+              <h5 class="mt-4">Consider the following:</h5>
+              <ul>
+                <li>External validity concerns</li>
+                <li>Generalizability of results</li>
+                <li>Potential biases in the sample</li>
+              </ul>
+              <p>
+                Future studies might benefit from employing more diverse and randomized sampling techniques to enhance
+                the generalizability of the results.
+              </p>
+            </div>
+
+            <div class="mt-4">
+              <h5>Test Your Understanding:</h5>
+              <p>What is the main concern with convenience sampling in this study?</p>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="samplingQuestion" id="option1" value="option1">
+                <label class="form-check-label" for="option1">
+                  It's too time-consuming
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="samplingQuestion" id="option2" value="option2">
+                <label class="form-check-label" for="option2">
+                  It's too expensive
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="samplingQuestion" id="option3" value="option3">
+                <label class="form-check-label" for="option3">
+                  It may not be representative of the general population
+                </label>
+              </div>
+              <button class="btn btn-primary mt-2" id="checkAnswer" data-bs-toggle="popover" data-bs-trigger="focus"
+                data-bs-placement="bottom">Check Answer</button>
+            </div>
+
+            <div id="feedbackArea" class="mt-3" style="display: none;">
+              <div class="alert" role="alert" id="feedbackText"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Ethical Considerations -->
+        <div class="card border-dark mb-4">
+          <div class="card-header bg-warning text-dark">
+            <h2 class="text-center mb-0">Ethical Considerations</h2>
+          </div>
+          <div class="card-body">
+            <div class="accordion" id="ethicalGuidelines">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" onclick="readAudioAnswerPreDefined('15')">
+                    1. Informed Consent
+                    <i class="bi bi-info-circle ms-2" data-bs-toggle="popover" data-bs-trigger="hover focus"
+                      title="Improvement Suggestion"
+                      data-bs-content="Implement a partial disclosure method, revealing the study's general nature without compromising results."></i>
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                  data-bs-parent="#ethicalGuidelines">
+                  <div class="accordion-body">
+                    Informed consent was not fully adhered to, as participants were not informed about the true nature
+                    of the experiment to prevent biased responses.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" onclick="readAudioAnswerPreDefined('16')">
+                    2. Right to Withdraw
+                    <i class="bi bi-info-circle ms-2" data-bs-toggle="popover" data-bs-trigger="hover focus"
+                      title="Improvement Suggestion"
+                      data-bs-content="Clearly state the right to withdraw in the initial briefing and provide multiple opportunities to exit the study."></i>
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                  data-bs-parent="#ethicalGuidelines">
+                  <div class="accordion-body">
+                    It remains unclear whether participants were explicitly informed of their right to withdraw from the
+                    study at any point.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" onclick="readAudioAnswerPreDefined('17')"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    3. Protection from Harm
+                    <i class="bi bi-info-circle ms-2" data-bs-toggle="popover" data-bs-trigger="hover focus"
+                      title="Improvement Suggestion"
+                      data-bs-content="Implement a thorough debriefing process and provide access to counseling services if needed."></i>
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                  data-bs-parent="#ethicalGuidelines">
+                  <div class="accordion-body">
+                    While no physical harm was inflicted, participants may have experienced psychological distress upon
+                    realizing their role in the simulated emergency.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" onclick="readAudioAnswerPreDefined('18')"
+                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    4. Confidentiality
+                    <i class="bi bi-info-circle ms-2" data-bs-toggle="popover" data-bs-trigger="hover focus"
+                      title="Improvement Suggestion"
+                      data-bs-content="Implement robust data anonymization techniques and clearly communicate data handling procedures to participants."></i>
+                  </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                  data-bs-parent="#ethicalGuidelines">
+                  <div class="accordion-body">
+                    Confidentiality was likely maintained, as personal identifiers were not disclosed in the study's
+                    findings.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" onclick="readAudioAnswerPreDefined('19')"
+                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    5. Debriefing
+                    <i class="bi bi-info-circle ms-2" data-bs-toggle="popover" data-bs-trigger="hover focus"
+                      title="Improvement Suggestion"
+                      data-bs-content="Develop a comprehensive debriefing protocol that explains the study's purpose, methods, and potential implications."></i>
+                  </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                  data-bs-parent="#ethicalGuidelines">
+                  <div class="accordion-body">
+                    It is unclear whether a comprehensive debriefing was provided to participants to explain the study's
+                    true purpose and alleviate any distress caused by deception.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingSix">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" onclick="readAudioAnswerPreDefined('20')"
+                    data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    6. Deception
+                    <i class="bi bi-info-circle ms-2" data-bs-toggle="popover" data-bs-trigger="hover focus"
+                      title="Improvement Suggestion"
+                      data-bs-content="Consider alternative methodologies that minimize deception while still achieving research objectives."></i>
+                  </button>
+                </h2>
+                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                  data-bs-parent="#ethicalGuidelines">
+                  <div class="accordion-body">
+                    The study employed deception, as participants were misled about the number of bystanders present to
+                    ensure genuine responses. This raises ethical concerns regarding participant autonomy and trust.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="alert alert-info mt-4">
+              <p class="mb-0">
+                <i class="bi bi-lightbulb me-2"></i>While providing valuable insights, deception necessitates a careful
+                balance between scientific advancement and ethical responsibility. One researcher notes, "The use of
+                deception, while providing valuable insights, raises significant ethical concerns about participant
+                autonomy and trust in research."
+              </p>
+            </div>
+            <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#ethicalConsiderationsModal" onclick="readAudioAnswerPreDefined('21')">
+              Learn More About Ethical Considerations
+            </button>
+          </div>
+        </div>
+        <!-- Modal for Ethical Considerations -->
+        <div class="modal fade" id="ethicalConsiderationsModal" tabindex="-1"
+          aria-labelledby="ethicalConsiderationsModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="ethicalConsiderationsModalLabel">Deeper Dive: Ethical Considerations in
+                  Research</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                  aria-label="Close" onclick="readAudioAnswerPreDefined('0')"></button>
+              </div>
+              <div class="modal-body">
+                <p>The Bystander Effect study highlights the ongoing tension between scientific progress and ethical
+                  conduct in research. While the study provided groundbreaking insights into human behavior, it raised
+                  significant ethical questions.<button type="button"
+                  class="btn btn-primary btn-sm rounded-circle ms-2" onclick="readAudioAnswerPreDefined('21', true)">
+                  <i class="fas fa-play"></i>
+                </button></p>
+
+                <h6 class="mt-4">Key Ethical Challenges:</h6>
+                <div class="accordion" id="ethicalChallengesAccordion">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Informed Consent and Deception
+                      </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                      data-bs-parent="#ethicalChallengesAccordion">
+                      <div class="accordion-body">
+                        Balancing the need for authentic responses with participants' right to informed consent. The use
+                        of deception in research methodology raises questions about participant autonomy.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Psychological Harm and Well-being
+                      </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                      data-bs-parent="#ethicalChallengesAccordion">
+                      <div class="accordion-body">
+                        Mitigating potential psychological harm from deception and balancing scientific goals with
+                        participant well-being. The study's design may cause distress or anxiety in participants.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Confidentiality and Debriefing
+                      </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                      data-bs-parent="#ethicalChallengesAccordion">
+                      <div class="accordion-body">
+                        Ensure participant confidentiality and data protection, and provide a comprehensive debriefing
+                        to address any concerns or distress. Proper follow-up is crucial in studies involving deception.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="alert alert-info mt-4">
+                  <h6 class="alert-heading">Moving Forward:</h6>
+                  <p class="mb-0">Researchers must develop methodologies that maintain scientific rigor while minimizing
+                    ethical compromises. This may involve:</p>
+                  <ul class="mt-2 mb-0">
+                    <li>More transparent study designs</li>
+                    <li>Enhanced debriefing procedures</li>
+                    <li>Innovative approaches to studying human behavior without resorting to deception</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="readAudioAnswerPreDefined('0')">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Ethical Analysis -->
+        <div class="card border-dark mb-4">
+          <div class="card-header bg-primary text-white">
+            <h2 class="text-center mb-0">Ethical Analysis: Balancing Benefits and Harms</h2>
+          </div>
+          <div class="card-body">
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-header bg-success text-white">
+                    <h5 class="card-title mb-0">Benefits</h5>
+                  </div>
+                  <div class="card-body" id="benefitsContainer">
+                    <!-- Benefits will be dropped here -->
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-header bg-danger text-white">
+                    <h5 class="card-title mb-0">Harms</h5>
+                  </div>
+                  <div class="card-body" id="harmsContainer">
+                    <!-- Harms will be dropped here -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-4">
+              <div class="col-12">
+                <h5>Drag and drop the items to categorize them as Benefits or Harms:</h5>
+                <div id="itemsContainer" class="d-flex flex-wrap justify-content-center">
+                  <div class="badge bg-secondary m-2 p-2 draggable" draggable="true">Enhanced understanding of human
+                    behavior</div>
+                  <div class="badge bg-secondary m-2 p-2 draggable" draggable="true">Improved public safety strategies
+                  </div>
+                  <div class="badge bg-secondary m-2 p-2 draggable" draggable="true">Development of effective training
+                    programs</div>
+                  <div class="badge bg-secondary m-2 p-2 draggable" draggable="true">Potential psychological distress
+                  </div>
+                  <div class="badge bg-secondary m-2 p-2 draggable" draggable="true">Ethical dilemmas due to deception
+                  </div>
+                  <div class="badge bg-secondary m-2 p-2 draggable" draggable="true">Compromise of participant trust
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button id="checkAnswers" class="btn btn-primary mb-3">Check Answers</button>
+
+            <div id="feedback" class="alert" style="display: none;"></div>
+
+            <p class="card-text mt-3">
+              Evaluating whether the benefits outweigh the harms involves considering the long-term societal gains
+              from the research against the immediate discomfort experienced by participants.
+            </p>
+
+            <div class="alert alert-warning" role="alert">
+              <i class="bi bi-exclamation-triangle"></i> While the knowledge gained has been invaluable, it's crucial to
+              consider
+              whether similar insights could have been obtained through less ethically problematic methods.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Resources Tab -->
+      <div class="tab-pane fade" id="resourcesTab">
+        <!-- Additional Resources -->
+        <div class="alert border-dark alert-primary mb-4">
+          <h2 class="text-center section-header">Additional Resources</h2>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <div class="card">
+                <img src="/static/img/1.jpeg" class="card-img-top" alt="Darley and Latané">
+                <div class="card-body">
+                  <h5 class="card-title">Darley & Latané: Pioneers in Social Psychology</h5>
+                  <p class="card-text">Explore the lives and contributions of John M. Darley and Bibb Latané, the
+                    masterminds behind the Bystander Effect Experiment.
+                  </p>
+                  <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pioneersModal" onclick="readAudioAnswerPreDefined('22')">Read
+                    More</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="card">
+                <img src="/static/img/2.png" class="card-img-top" alt="Kitty Genovese Case">
+                <div class="card-body">
+                  <h5 class="card-title">The Kitty Genovese Case: A Catalyst for Change</h5>
+                  <p class="card-text">Delve into the events surrounding Kitty Genovese's murder and its profound
+                    impact on psychological research.
+                  </p>
+                  <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#genoveseModal" onclick="readAudioAnswerPreDefined('23')">Learn
+                    More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Timeline Section -->
+        <div class="card border-dark mb-4">
+          <div class="card-header card-header-custom">
+            Timeline of the Bystander Effect Research
+          </div>
+          <div class="card-body">
+            <div class="timeline-horizontal">
+              <div class="row">
+                <div class="col-md-3 mb-4">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h5 class="card-title">1964</h5>
+                      <p class="card-text">The murder of Kitty Genovese occurs in New York City.</p>
+                      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1964" onclick="readAudioAnswerPreDefined('24')">
+                        Learn More
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h5 class="card-title">1968</h5>
+                      <p class="card-text">Darley and Latané conduct the seminal Bystander Effect Experiment.</p>
+                      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1968" onclick="readAudioAnswerPreDefined('25')">
+                        Learn More
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h5 class="card-title">1970s</h5>
+                      <p class="card-text">Further studies expand on Darley and Latané's work.</p>
+                      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1970s" onclick="readAudioAnswerPreDefined('26')">
+                        Learn More
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h5 class="card-title">1980s-Present</h5>
+                      <p class="card-text">Research continues to explore the nuances of the Bystander Effect.</p>
+                      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1980s" onclick="readAudioAnswerPreDefined('27')">
+                        Learn More
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modals -->
+        <div class="modal fade" id="modal1964" tabindex="-1" aria-labelledby="modal1964Label" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modal1964Label">1964: Kitty Genovese Murder</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>The murder of Kitty Genovese occurs in New York City, sparking widespread media attention and public
+                  concern over the lack of bystander intervention.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="modal1968" tabindex="-1" aria-labelledby="modal1968Label" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modal1968Label">1968: Bystander Effect Experiment</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>John M. Darley and Bibb Latané conduct the seminal Bystander Effect Experiment, formally introducing
+                  the concept to social psychology.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="modal1970s" tabindex="-1" aria-labelledby="modal1970sLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modal1970sLabel">1970s: Expanding Research</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>Further studies expand on Darley and Latané's work, exploring various factors that influence the
+                  Bystander Effect, including diffusion of responsibility and social influence.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="modal1980s" tabindex="-1" aria-labelledby="modal1980sLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modal1980sLabel">1980s-Present: Ongoing Research</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>Research continues to explore the nuances of the Bystander Effect in diverse contexts, including
+                  digital environments and emergency response training.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Citations Section -->
+        <div class="card border-dark mb-4">
+          <div class="card-header card-header-custom">
+            Citations
+          </div>
+          <div class="card-body">
+            <ol>
+              <li><a href="https://www.simplypsychology.org/bystander-effect.html" target="_blank">Simply Psychology -
+                  Bystander Effect</a>
+              </li>
+              <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6099971/" target="_blank">NCBI Article on
+                  Bystander Effect</a>
+              </li>
+              <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6790599/" target="_blank">NCBI Study on Group
+                  Dynamics</a>
+              </li>
+              <li><a
+                  href="http://www.inquiriesjournal.com/articles/1493/a-summary-of-the-bystander-effect-historical-development-and-relevance-in-the-digital-age"
+                  target="_blank">Inquiries Journal -
+                  Bystander Effect Summary</a>
+              </li>
+              <li><a href="https://www.jsr.org/hs/index.php/path/article/download/1390/636/6708" target="_blank">Journal
+                  of
+                  Social Research - Ethical Concerns</a>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <!-- Pioneers Modal -->
+        <div class="modal fade" id="pioneersModal" tabindex="-1" aria-labelledby="pioneersModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="pioneersModalLabel">Darley & Latané: Pioneers in Social Psychology</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                  aria-label="Close" onclick="readAudioAnswerPreDefined('0')"></button>
+              </div>
+              <div class="modal-body">
+                <h6>John M. Darley</h6>
+                <p>
+                  John M. Darley made significant contributions to social psychology, particularly indecision-making and
+                  ethical behavior. His collaboration with Bibb Latané on the Bystander Effect has left a lasting legacy
+                  in understanding human social behavior.
+                </p>
+                <h6>Bibb Latané</h6>
+                <p>
+                  Bibb Latané's research delved deep into the mechanisms of social influence and group dynamics. His
+                  work with Darley not only pioneered the study of the Bystander Effect but also provided a framework
+                  for numerous subsequent studies in social psychology.<button type="button"
+                  class="btn btn-primary btn-sm rounded-circle ms-2" onclick="readAudioAnswerPreDefined('22', true)">
+                  <i class="fas fa-play"></i>
+                </button>
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="readAudioAnswerPreDefined('0')">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Genovese Modal -->
+        <div class="modal fade" id="genoveseModal" tabindex="-1" aria-labelledby="genoveseModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="genoveseModalLabel">The Kitty Genovese Case: A Catalyst for Change</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                  aria-label="Close" onclick="readAudioAnswerPreDefined('0')"></button>
+              </div>
+              <div class="modal-body">
+                <p>
+                  In 1964, Kitty Genovese was tragically murdered in New York City. What made this case particularly
+                  notorious was the report that 38 witnesses saw or heard the attack but did not intervene or call the
+                  police on time. This shocking lack of bystander intervention sparked widespread media attention. It
+                  became the foundation for Darley and Latané's research into the Bystander Effect.
+                </p>
+                <p>
+                  The Genovese case highlighted the mysterious phenomenon where individuals fail to act in emergencies
+                  when others are present, challenging preconceived notions about human nature and altruism.<button type="button"
+                  class="btn btn-primary btn-sm rounded-circle ms-2" onclick="readAudioAnswerPreDefined('23', true)">
+                  <i class="fas fa-play"></i>
+                </button>
+                </p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="readAudioAnswerPreDefined('0')">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Resources Tab End -->
+    </div>
+    <!-- Public Service Announcement -->
+    <div class="psa">
+      <h1 class="text-center">Public Service Announcement</h1>
+      <h2 class="text-center">Understanding the Bystander Effect to Foster a Helping Society</h2>
+      <div class="alert alert-danger">
+        <h4 class="alert-heading">Be the Change!</h4>
+        <p class="mb-0">In emergencies, every second counts, and your decision to act can save lives. Recognize the
+          factors influencing inaction and commit to being a proactive community member. Training and awareness can
+          empower you to overcome the Bystander Effect and make a meaningful difference when it matters most.<button type="button"
+          class="btn btn-primary btn-sm rounded-circle ms-2" onclick="readAudioAnswerPreDefined('28', true)">
+          <i class="fas fa-play"></i>
+        </button>
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- Scripts -->
+  <script src="/static/js/jquery.min.js"></script>
+  <script src="/static/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/js/script.min.js"></script>
+  <script src="/static/js/index.js"></script>
+</body>
+
+</html>
